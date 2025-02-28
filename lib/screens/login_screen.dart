@@ -8,7 +8,9 @@ import 'package:get/get_core/src/get_main.dart';
 class AirbnbLoginScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    var size = MediaQuery.of(context).size;
+    var size = MediaQuery
+        .of(context)
+        .size;
     return Scaffold(
       backgroundColor: Colors.white,
       body: SafeArea(
@@ -21,12 +23,12 @@ class AirbnbLoginScreen extends StatelessWidget {
                 SizedBox(height: 30),
                 Center(
                     child: Text(
-                  "Log in or Sign up",
-                  style: TextStyle(
-                      fontSize: 18,
-                      color: Colors.black,
-                      fontWeight: FontWeight.bold),
-                )),
+                      "Log in or Sign up",
+                      style: TextStyle(
+                          fontSize: 18,
+                          color: Colors.black,
+                          fontWeight: FontWeight.bold),
+                    )),
                 Divider(),
                 SizedBox(height: 20),
                 Text(
@@ -79,7 +81,7 @@ class AirbnbLoginScreen extends StatelessWidget {
                 RichText(
                   text: TextSpan(
                       text:
-                          "By continuing, you agree to Airbnb's Terms of Service and acknowledge the ",
+                      "By continuing, you agree to Airbnb's Terms of Service and acknowledge the ",
                       style: TextStyle(
                           fontWeight: FontWeight.w400,
                           fontSize: 14,
@@ -174,9 +176,9 @@ class AirbnbLoginScreen extends StatelessWidget {
                 SizedBox(height: 20),
                 Center(
                     child: Text(
-                  "Need Help?",
-                  style: TextStyle(fontSize: 16, color: Colors.black),
-                ))
+                      "Need Help?",
+                      style: TextStyle(fontSize: 16, color: Colors.black),
+                    ))
               ],
             ),
           ),
@@ -185,31 +187,31 @@ class AirbnbLoginScreen extends StatelessWidget {
     );
   }
 
-  Widget _buildSocialButton(
-      {required IconData icon,
-      required String label,
-      required Color color,
-      required VoidCallback onPressed,
-      required Size size}) {
-    return Container(
-      width: size.width,
-      decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(10), border: Border.all()),
-      child: Padding(
-        padding: const EdgeInsets.all(12.0),
+  Widget _buildSocialButton({
+    required IconData icon,
+    required String label,
+    required Color color,
+    required VoidCallback onPressed,
+    required Size size,
+  }) {
+    return InkWell( // Wrap with InkWell to detect taps
+      onTap: onPressed,
+      child: Container(
+        width: size.width,
+        padding: EdgeInsets.all(12.0),
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(10),
+          border: Border.all(),
+        ),
         child: Row(
+          mainAxisAlignment: MainAxisAlignment.center, // Center the content
           children: [
-            Icon(
-              icon,
-              color: color,
-            ),
-            SizedBox(
-              width: size.width * .15,
-            ),
+            Icon(icon, color: color),
+            SizedBox(width: 10), // Reduce spacing
             Text(
               label,
               style: TextStyle(fontWeight: FontWeight.w500, fontSize: 18),
-            )
+            ),
           ],
         ),
       ),

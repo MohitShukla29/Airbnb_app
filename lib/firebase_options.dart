@@ -63,6 +63,9 @@ class DefaultFirebaseOptions {
     messagingSenderId: '925586173791',
     projectId: 'airbnbapp-e4114',
     storageBucket: 'airbnbapp-e4114.firebasestorage.app',
+    androidClientId: '925586173791-7g7kf016pn033mcq52fsbkdcnj9cjtvs.apps.googleusercontent.com',
+    iosClientId: '925586173791-v8m917r1d9u13q2re6rf5176mdt51em7.apps.googleusercontent.com',
     iosBundleId: 'com.example.airbnbApp',
   );
+
 }
